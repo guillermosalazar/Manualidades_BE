@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+  <meta charset="utf-8" />
+  <title>Manualidades Creativas</title>
+
+  {% load staticfiles %}
+  <link rel="stylesheet" type="text/css" href="{% static "front/css/normalize.css" %}" />
+  <link rel="stylesheet" type="text/css" href="{% static "front/css/foundation.css" %}" />
+  <link rel="stylesheet" type="text/css" href="{% static "front/css/style.css" %}" />
+  <!--[if lt IE 9]>
+    <link rel="stylesheet" type="text/css" href="{% static "front/css/ie.css" %}" />  
+  <![endif]-->
+  <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+
+<!-- Botton TOP -->
+<div><a href="#" class="go-top">Top</a></div>
+<!-- Fin Botton TOP -->
+
+<!-- Header y Navegacion principal -->
+
+  <!-- Links en encabezado -->
+  <div class="row">
+    <div class="large-6 columns">
+      <ul class="pipe">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Inicio Sesion</a></li>
+      </ul>
+    </div>
+    <div class="large-6 columns">
+      <ul class="bs right">
+        <li><a href="#">Tienda en Linea</a></li>
+        <li><a href="#">Sobre Nosotros</a></li>
+        <li><a href="#">Contactanos</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- Fin Links en encabezado -->
+
+  <!-- Logo y buscar -->
+  <div class="row header">
+    <div class="large-8 left">
+      <img src="http://placehold.it/350x85&amp;text=Logo" alt="img"/>
+    </div>
+    <div class="large-4 right">
+      <form>
+        <input type="search" id="search_box" placeholder="Buscar">
+      </form>
+    </div>
+  </div>
+  <!-- Fin Logo y buscar -->
+
+  <!-- Menu Principal -->
+
+      <div class="row panelMenu">
+        <div class="large-10 large-offset-1 columns">
+              <ul class="menu center">
+                <li><a href="#">HERRAMIENTAS</a></li>
+                <li><a href="#">TEXTIL</a></li>
+                <li><a href="#">VINIL</a></li>
+                <li><a href="#">TINTAS</a></li>
+                <li><a href="#">IDEAS DE MANUALIDADES</a></li>
+                <li><a href="#">PROMOCIONES</a></li>
+              </ul>
+        </div>
+        <div class="large-1 columns">
+          <ul class="menu">
+            <li><a href="#"><img src="http://placehold.it/35x35&amp;text=C" alt="Carrito"></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- sombra del menu -->
+      <div class="row">
+          <img class="menu_shade" src="{% static "front/img/menu_shade.png" %}" alt="Sombra Menu">
+      </div>
+
+  <!-- Fin Menu Principal -->
+
+<!-- Fin Header y Navegacion principal -->
+
+
+<!-- Contenido -->
+
+<div class="row">    
+
+    <!-- Bloque Central -->
+    <div class="large-9 push-3 columns">
+
+      <!-- Imagen Principal -->
+      <div class="row bloque_central">
+          <p><img src="http://placehold.it/750x350&amp;text=Imagen+Principal" alt="img" /></p>
+      </div>
+
+      <!-- Articulos -->
+      <div class="row bloque_central">
+
+            {% for articulo in articulos %}
+            <div class="large-{{ grid_article_size }} columns">
+              <div class="center">
+                <img src="http://placehold.it/250x250&amp;text=Imagen" alt="img">
+              </div>  
+              <h5><small><strong>{{ articulo.titulo }}</strong></small></h5>
+                <small>
+                  {{ articulo.texto_intro }}
+                </small>
+            </div>
+            {% endfor %}
+
+      </div>  
+
+      <!-- Subtitulo -->
+      {% if grid_product_size > 0 %}
+      <div class="row bloque_central">
+        <h6 class="panel_subtitulo">PRODUCTOS NUEVOS</h6>
+      </div>
+      {% endif %}
+      <!-- Productos Nuevos -->
+      <div class="row bloque_central">
+
+      {% for producto in productos %}
+        <div class="large-{{ grid_product_size }} columns {{ producto.clase }}">
+          <h6>{{ producto.nombre_categoria }}</h6>
+          <div class="center">
+            <img src="http://placehold.it/200x125&amp;text=Thumbnail" alt="img">
+          </div>
+          <div class="producto_descripcion">
+            <h6>{{ producto.nombre }}</h6>
+            <p>{{ producto.descripcion }}</p>
+            <span>{{ producto.precio }}</span>
+            <img src="http://placehold.it/5x5&amp;text=>" alt="img">
+            <a href="#">Details</a>
+          </div>
+        </div>
+      {% endfor %}
+
+      </div>
+
+      <!-- Links -->
+      <div class="row bloque_central_footer">
+
+              <div class="large-3 columns">
+                <div class="single"><a href="#">Home</a></div>
+                <div class="single"><a href="#">Online Store</a></div>
+                <div class="single"><a href="#">News</a></div>
+                <div class="single"><a href="#">Contacts</a></div>
+              </div>
+              <div class="large-3 columns">
+                <div class="single"><a href="#">About Joomla</a></div>
+                <div class="single"><a href="#">Wrappers</a></div>
+                <div class="single"><a href="#">Reviews</a></div>
+                <div class="single"><a href="#">Shopping Cart</a></div>
+              </div>
+              <div class="large-3 columns">
+                <div class="single"><a href="#">Login</a></div>
+                <div class="single"><a href="#">Create Account</a></div>
+                <div class="single"><a href="#">Advanced Search</a></div>
+                <div class="single"><a href="#">Order History</a></div>
+              </div>
+              <div class="large-3 columns">
+                <div class="single"><a href="#">Shipping &amp; Returns</a></div>
+                <div class="single"><a href="#">Contact Us</a></div>
+              </div>
+
+      </div>
+
+    </div>
+
+    <!-- Fin Bloque Central -->
+    
+    <!-- Sidebar -->
+
+    <div class="large-3 pull-9 columns">    
+
+          <!-- Log-in de usuarios -->
+          <div class="row bloque_lateral">
+              <div class="columns">
+                  <p>INICIO DE SESI&Oacute;N</p>
+                  <label>Usuario</label>
+                  <input type="text" placeholder="">
+                  <label>Contrasea</label>
+                  <input type="password" placeholder="">
+
+                  <input type="checkbox" id="checkbox1"><span>Recordarme</span>
+                  <div><a href="#" class="tiny button">Iniciar</a></div>
+                  <div><a href="#" class="tiny button">Crear cuenta</a></div>
+                  <div><a href="#">¿Olvido su contrase&ntilde;a?</a></div>
+              </div>
+          </div>
+
+          <!-- Oferta -->
+
+          {% for oferta in ofertas %}
+          <div class="row bloque_lateral">
+              <div class="columns producto_oferta">
+                  <h6>OFERTA</h6>
+                  <div class="center">
+                    <img src="http://placehold.it/200x125&amp;text=Thumbnail" alt="img">
+                  </div>
+                  <div class="producto_descripcion">
+                    <h6>{{ oferta.producto_nombre }}</h6>
+                    <p>{{ oferta.producto_descripcion }}</p>
+                    <span id="was">{{ oferta.precio_anterior }}</span>
+                    <br>
+                    <span id="now">{{ oferta.precio_oferta }}</span>
+                    <img src="http://placehold.it/5x5&amp;text=>" alt="img">
+                    <a href="#">Details</a>
+                  </div>
+              </div>
+          </div>        
+          {% endfor %}
+          <!-- Facebook -->
+          <div class="row bloque_lateral">
+              <div class="columns">
+                <img src="http://placehold.it/250x550&amp;text=Feis" alt="img">
+              </div>
+          </div>    
+
+    </div>
+
+    <!-- Fin Sidebar -->
+    
+</div>
+
+<!-- Fin Contenido -->
+
+   
+  
+<!-- Footer -->
+
+  <footer>
+      <div class="row footer">
+
+            <div class="large-10 columns">
+              <small>&copy; Copyright <a href="#">Link</a> Licencia <a href="#">Link2</a> </small>
+            </div>
+
+            <div class="large-2 columns right">
+              <a href="#"><img src="http://placehold.it/150x50&amp;text=Visa-MasterCard+Logo" alt="img"></a>
+            </div>
+
+      </div> 
+  </footer>
+
+<!-- Fin Footer -->
+
+  <div class="row">
+      <div class="large-10 columns">
+         <ul class="vcard">
+          <li class="fn">Guillermo Salazar Ch.</li>
+          <li class="email"><a href="#">guillermosalazar@live.com</a></li>
+        </ul> 
+      </div>
+  </div>
+
+
+  <script src="{% static "front/js/vendor/custom.modernizr.js" %}"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+  <script>
+  document.write('<script src=' +
+  ('__proto__' in {} ? '{% static 'front/js/vendor/zepto' %}' : '{% static 'front/js/vendor/jquery' %}') +
+  '.js><\/script>')
+  </script>
+  <script src="{% static "front/js/foundation/foundation.js" %}"></script>
+  <script src="{% static "front/js/foundation/foundation.alerts.js" %}"></script>
+  <script src="{% static "front/js/foundation/foundation.clearing.js" %}"></script>
+  <script src="{% static "front/js/foundation/foundation.cookie.js" %}"></script>
+  <script src="{% static "front/js/foundation/foundation.dropdown.js" %}"></script>
+  <script src="{% static "front/js/foundation/foundation.forms.js" %}"></script>
+  <script src="{% static "front/js/foundation/foundation.joyride.js" %}"></script>
+  <script src="{% static "front/js/foundation/foundation.magellan.js" %}"></script>
+  <script src="{% static "front/js/foundation/foundation.orbit.js" %}"></script>
+  <script src="{% static "front/js/foundation/foundation.placeholder.js" %}"></script>
+  <script src="{% static "front/js/foundation/foundation.reveal.js" %}"></script>
+  <script src="{% static "front/js/foundation/foundation.section.js" %}"></script>
+  <script src="{% static "front/js/foundation/foundation.tooltips.js" %}"></script>
+  <script src="{% static "front/js/foundation/foundation.topbar.js" %}"></script>
+  <script src="{% static "front/js/foundation/foundation.interchange.js" %}"></script>
+
+
+  <script>
+
+    $(document).foundation();
+
+    $(document).ready(function() {
+
+      // Mostramos el botton TOP cuando scrollTop > 100
+      $(window).scroll(function() {
+
+        if ($(this).scrollTop() > 100) {
+
+          $('.go-top').fadeIn(100);
+
+        } else {
+
+          $('.go-top').fadeOut(100);
+
+        }
+
+      });
+      
+      // Animacion para subir la pagina
+      $('.go-top').click(function(event) {
+
+        event.preventDefault();
+        $('html, body').animate({scrollTop: 0}, 500);
+
+      })
+
+
+    });
+
+  </script>
+
+
+</body>
+</html>

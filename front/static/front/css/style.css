@@ -1,0 +1,280 @@
+/***********************************************************************************************/
+/* Estilos adicionales y auxiliares                                                            */
+/***********************************************************************************************/
+
+  body
+  {
+    background-color: #F8F8F8 ;
+    background-image:url('../img/bg.png');
+    background-repeat:repeat-x;
+    margin-top: 20px;
+  }
+
+/* Links en encabezado separados con | */
+
+  .pipe li {
+    display: inline-block;
+    padding: 0 .25em 0 0;
+    color: gray;
+  }
+
+  .pipe li:before {
+    content: "|";
+    color: gray;
+    display: inline-block;
+    font-size: 11px;
+    margin: 0 .5em 0 0;
+  }
+
+  .pipe li:first-child:before { 
+    content: " "; 
+  } 
+
+  .pipe a {
+    color: gray;
+    font-size: 11px;
+  }
+
+/* Links en encabezado separados con \ */
+
+  .bs li {
+    display: inline-block;
+    padding: 0 .25em 0 0;
+    color: white;
+  }
+
+  .bs li:before {
+    content: " \\ ";
+    color: white;
+    display: inline-block;
+    font-size: 12px;
+    margin: 0 .5em 0 0;
+  }
+
+  .bs li:first-child:before { content: " "; }
+
+  .bs a {
+    color: white;
+    font-size: 12px;
+  }
+
+/* Encabezado */
+
+  .header {
+    margin-bottom: 20px;
+  }
+
+/* Caja buscar */
+
+  #search_box {
+    background: white url('../img/search.png') right no-repeat;
+    padding-left: 17px;
+    color: white;
+    background-color:transparent;
+    position: relative;
+    top: 50px;
+  }
+
+/* Menu principal */
+
+  .menu li {
+    display: inline-block;
+    padding: 0 .25em 0 0;
+    color: gray;
+    padding-top: 20px;
+  }
+
+  .menu li:before {
+    content: " | ";
+    color: gray;
+    display: inline-block;
+    font-size: 24px;
+    margin: 0 .5em 0 0;
+  }
+
+  .menu li:first-child:before { content: " "; } 
+
+  .menu a {
+    color: gray;
+    font-size: 26px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+  }  
+
+  .panelMenu {
+    background: white; 
+    background-image:url('../img/menu_top.png');
+    background-repeat:repeat-x;
+  }  
+
+/* Sombra del menu */
+
+  .menu_shade
+  {
+    width:100%;
+  }
+
+/* Bloque de navegacion lateral */
+
+  .bloque_lateral
+  {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 10px !important;
+    margin-right: 10px !important;
+    border-top: 4px solid #B8B8B8 ;
+    background-color: white;
+  }
+
+/* Bloques centrales*/
+
+  .bloque_central{
+    background-color: white;
+    padding-bottom: 20px;
+  }
+
+  .bloque_central_footer{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 4px solid #B8B8B8 ;
+    background-color: #f2f2f2;
+  }
+
+  .bloque_central_footer a{
+    font-size: 11px;
+    color: gray;
+  }  
+
+/* Panel divisor de bloque central*/
+
+  .panel_subtitulo{
+    margin-bottom: 1.25em;
+    padding: 1.25em;
+    background: #f2f2f2;
+  }
+
+/* Productos */
+
+  .producto_first {
+
+    border: none;
+    text-align: left;
+    font-size: 20px;
+
+  }
+
+  .producto_first h6{
+
+    text-align: right;
+    font-size: 12px;
+
+  }  
+
+  .producto {
+
+    border-left: 1px solid gray;
+    text-align: left;
+    font-size: 20px;
+    
+  }
+
+  .producto h6{
+
+    text-align: right;
+    font-size: 12px;
+    
+  }
+
+  .producto_oferta{
+    text-align: left;
+    font-size: 20px;
+  }
+
+  .producto_oferta h6{
+    font-size: 12px;
+    text-align: left;
+  }
+
+  #was{
+    text-decoration: line-through;
+  }
+
+  #now{
+    color: red;
+  }  
+
+  .producto_descripcion{
+
+    font-size: 10px;
+    padding-left: 10px;
+    padding-top: 15px;
+
+  }
+
+  .producto_descripcion h6{
+    font-size: 14px;
+    text-align: left;
+    color: red;    
+  }
+
+  .producto_descripcion p{
+    font-size: 12px;
+    text-align: left;
+    color: gray;    
+  }    
+
+  .producto_descripcion span{
+    font-size: 20px;
+    text-align: left;
+    padding-right: 20px;    
+  }    
+
+  .producto_descripcion a{
+
+    font-size: 12px;
+    color: gray;
+    text-decoration: underline;
+  }  
+
+/* Lista de links ordenada izq - abajo - derecha*/
+/*
+  .cont {
+    -webkit-columns: 8em;
+    -moz-columns: 8em;
+    columns: 8em; 
+column-count:3;
+    padding-left: 25px;
+    margin-left: 50px;
+  }
+*/
+/* Footer */
+  .footer{
+    margin-bottom: 1.25em;
+    padding: 1.25em;
+    background: #E8E8E8 ;
+  }
+
+/* Auxliar para centrar contenido */
+  .center
+  {
+     text-align:center;
+  }
+
+
+/***********************************************************************************************/
+/* Boton TOP */
+/***********************************************************************************************/
+  .go-top {
+    position: fixed;
+    bottom: 2em;
+    right: 2em;
+    text-decoration: none;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+    font-size: 12px;
+    padding: 1em;
+    display: none;
+  }
+
+  .go-top:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
